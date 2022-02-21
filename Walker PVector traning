@@ -1,0 +1,39 @@
+/*
+Language: Processing
+*/
+
+Walker w;
+
+void setup(){
+  size(500,500);
+  background(0);
+  
+  w = new Walker();
+}
+
+void draw(){
+ w.update();
+ w.draww();
+}
+
+
+
+ PVector pos;
+ PVector vel;
+  Walker(){
+    pos = new PVector(width/2,height/2);
+    vel = new PVector(1,-1);
+    vel = PVector.random2D();
+  }
+  void update(){
+    pos.add(vel);
+    vel = PVector.random2D();
+  }
+  
+  void draww(){
+    stroke(255);
+    point(pos.x,pos.y);
+    
+  }
+}
+  
